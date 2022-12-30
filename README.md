@@ -90,15 +90,18 @@ cd disaster-tweets-classification
 ```
 
 3.    Build the Docker image:
-    - [ ] Using docker build line command:
+
+- [ ] Using docker build line command:
+
 ```
 docker build -t disastertweets/disaster-tweets-alerter .
+
 ```
 
-    - [ ] Using maven:
+- [ ] Using maven:
+
 ```
 mvn package dockerfile:build
-
 ```
 
 4.    Run the Docker container:
