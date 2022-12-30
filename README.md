@@ -21,7 +21,7 @@ git clone git@gitlab.com:mohamedhamri/disaster-tweets.git
 2.  Navigate to the root directory of the project:
 
 ```
-cd disaster-tweets
+cd disaster-tweets/disaster-tweets-classifier
 
 ```
 
@@ -86,7 +86,7 @@ git clone git@gitlab.com:mohamedhamri/disaster-tweets.git
 
 2.   Navigate to the root directory of the project:
 ```
-cd disaster-tweets-classification
+cd disaster-tweets/disaster-tweets-classification
 ```
 
 3.    Build the Docker image:
@@ -106,7 +106,7 @@ mvn package dockerfile:build
 
 4.    Run the Docker container:
 
-docker run -disastertweets/disaster-tweets-alerter
+docker run disastertweets/disaster-tweets-alerter
 
 The microservice will now be running on your local machine at http://localhost:80.
 
