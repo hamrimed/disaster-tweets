@@ -146,7 +146,7 @@ The Emergency Alerts Microservice requires the following configuration options:
     DISASTER_TWEETS_CLASSIFICATION_URL: The URL of the Disaster Tweets Classification Microservice.
     SMTP_HOST: The hostname of the SMTP server to use for sending emails.
     SMTP_PORT: The port of the SMTP server to use for sending emails.
-    SMTP_USERNAME: The
+    SMTP_USERNAME: The username for the SMTP server.
 
 # Deployement:
 
