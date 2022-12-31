@@ -5,4 +5,5 @@ import org.mql.microservices.disastertweetsalerter.models.Contact;
 
 public interface ContactsRepository {
     public List<Contact> findByCountry(String country);
+    public List<Contact> getAllContacts();
 }

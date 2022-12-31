@@ -5,17 +5,26 @@ import java.util.Map;
 
 import org.mql.microservices.disastertweetsalerter.models.ClassificationResult;
 import org.mql.microservices.disastertweetsalerter.models.Tweet;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class ClassifierRestTemplate implements DisasterTweetsClassifierService {
-   
+public class DefaultDisasterTweetsClassifierService implements DisasterTweetsClassifierService {
+    @Value("${disaster.tweets.classification.domain}")
+    private String domain;
+    @Value("${disaster.tweets.classification.port}")
+    private Integer port;
+    @Value("${disaster.tweets.classification.endpoint}")
+    private String endpoint;
+
+    public DefaultDisasterTweetsClassifierService() {
+    }
 
     public ClassificationResult classifyTweet(Tweet tweet) {
         RestTemplate restTemplate = new RestTemplate();
         // Set the URL of the Flask API endpoint
-        String apiUrl = "http://4.152.192.132:5000/predict";
+        String apiUrl = "http://" + domain + ":" + port + endpoint;
 
         // Set the request body (e.g. the tweet to be classified)
         //String requestBody = String.format("{\"tweet\": \"%s\"}", tweet.getTweet());
