@@ -25,7 +25,6 @@ public class ClassificationController {
     public ResponseEntity<String> checkAndAlert(@RequestBody Tweet tweet) {
         ClassificationResult result = classifierService.classifyTweet(tweet);
         boolean alertResult = false;
-        //alertResult = alerterService.alert();
         if(result.isRelevant()) {
            alertResult = alerterService.alert(tweet); 
         }
