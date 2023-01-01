@@ -15,7 +15,7 @@ public class DefaultContactsRepository implements ContactsRepository {
 
     private void init() {
         list.add(new Contact(101, "MA", "med.fes63@gmail.com", "+212682905700"));
-        list.add(new Contact(102, "USA","issambenhamou1@gmail.com", "+212682905700"));
+        list.add(new Contact(102, "USA","issambenhamou1@gmail.com", "+212650496770"));
     }
 
     public List<Contact> findByCountry(String country) {
