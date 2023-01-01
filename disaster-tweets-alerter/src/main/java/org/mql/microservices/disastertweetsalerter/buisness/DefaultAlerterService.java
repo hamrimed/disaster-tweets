@@ -16,9 +16,12 @@ public class DefaultAlerterService implements AlerterService {
     
     public boolean alert(Tweet tweet) {
         List<Contact> contacts = contactsRepository.findByCountry("MA");
+        int count = 0;
         for (Alerter<Tweet> alerter : alerters) {
-            alerter.alert(tweet, contacts);
+            if(alerter.alert(tweet, contacts)) {
+                count++;
+            }
         }
-        return true;
+        return count > 0;
     }
 }
